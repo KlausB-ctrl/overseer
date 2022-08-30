@@ -1,0 +1,101 @@
+@import '_variables', '_mixins';
+
+body {
+    margin: 0%;
+    padding: 0%;
+    overflow-x: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    height: 10%;
+    width: 100%;
+    background-color: $white;
+    border-left: 2px solid $background-colour;
+
+    .header__content {
+        @include flexCenter(row);
+        justify-content: space-between;
+        height: 100%;
+        margin: 0 50px;
+
+        .header__buttons {
+            @include flexCenter(row);
+            gap: 25px;
+        }
+    }
+}
+
+.button--green {
+    background-color: $green;
+    border: $green;
+    border-radius: 50px;
+    color: $white;
+    font-size: 1.6em;
+    padding: 0.8em 1em;
+}
+
+#root {
+    height: 100vh;
+    max-width: 100vw;
+    background-color: $background-colour;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.sidebar {
+    height: 100%;
+    width: 15%;
+    background-color: $white;
+
+    .sidebar__logo {
+        @include flexCenter(row);
+        height: 10%;
+        img {
+            width: 60%;
+            margin: auto;
+        }
+    }
+
+    .sidebar__content {
+        height: 90%;
+
+        h2 {
+            margin-left: 50px;
+        }
+
+        .sidebar__content__boardlist {
+            button {
+                background: none;
+                border: none;
+                border-bottom-right-radius: 30px;
+                border-top-right-radius: 30px;
+                padding: 20px 25px 20px 50px;
+                color: $dark-gray;
+                font-size: 1.5em;
+            }
+
+            .boardlist__button--active {
+                background: $green;  
+                color: white;
+            }
+        }
+    }
+}
+
+.content {
+    height: 100%;
+    width: 85%;
+}
+
+.three-dot-button {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: $gray;
+    box-shadow: 0px 15px 0px $gray, 0px -15px 0px $gray;  
+}
